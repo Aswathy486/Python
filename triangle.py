@@ -1,42 +1,30 @@
 import turtle
 
-wn = turtle.Screen()
-wn.bgcolor("white") 
-wn.title("My Turtle equilateral triangle") 
+def draw_triangle(t, size, color):
+    t.fillcolor(color)
+    t.begin_fill()
+    for _ in range(3):
+        t.forward(size)
+        t.left(120)
+    t.end_fill()
 
-my_turtle = turtle.Turtle()
-my_turtle.pencolor("black") 
-my_turtle.pensize(10) 
-my_turtle.color("black")
-my_turtle.fillcolor("violet")
-my_turtle.begin_fill()
+turtle.bgcolor("white")
+turtle.title("Equilateral Triangles")
 
+t = turtle.Turtle()
+t.pensize(5)
+t.pencolor("black")
 
-for _ in range(3): 
-    my_turtle.forward(300) 
-    my_turtle.left(120) 
-my_turtle.end_fill()
+draw_triangle(t, 200, "yellow")
 
-my_turtle.penup()
-my_turtle.backward(250)
-my_turtle.pendown()
-my_turtle.fillcolor("dark blue")
-my_turtle.begin_fill()
+t.penup()
+t.backward(200)
+t.pendown()
+draw_triangle(t, 150, "orange")
 
-for _ in range(3):
-    my_turtle.forward(200)
-    my_turtle.left(120)
-my_turtle.end_fill()
-
-my_turtle.penup()
-my_turtle.backward(150)
-my_turtle.pendown()
-my_turtle.fillcolor("blue")
-my_turtle.begin_fill()
-
-for _ in range(3):
-    my_turtle.forward(100)
-    my_turtle.left(120)
-my_turtle.end_fill()
+t.penup()
+t.backward(200)
+t.pendown()
+draw_triangle(t, 100, "red")
 
 turtle.done()
